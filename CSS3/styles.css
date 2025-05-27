@@ -1,0 +1,178 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('https://img.freepik.com/free-vector/watercolor-international-human-solidarity-day-background_23-2149837203.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+}
+/* Header Styles */
+#mainHeader {
+    background: linear-gradient(to right, #231b1b, #231b1b);
+    padding: 20px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.navList li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navList li a:hover {
+    text-decoration: underline;
+    color: #ffeb3b;
+}
+
+.hero {
+    background-image: url('https://www.shutterstock.com/image-vector/group-raised-hands-diverse-people-600nw-2221158931.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 20px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+}
+
+
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Event Cards */
+.eventCard {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 700px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.eventCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.eventCard h2 {
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.eventCard img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.eventCard p {
+    font-size: 16px;
+    color: #444;
+}
+
+/* News Article Section */
+.newsArticle {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 900px;
+    column-count: 2;
+    column-gap: 40px;
+    column-rule: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.newsArticle h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #eee;
+    background-color: #222;
+    margin-top: 50px;
+    border-radius: 8px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .navList {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .newsArticle {
+        column-count: 1;
+    }
+.hero p {
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+}
+
+.eventCard h2 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+    .hero h2 {
+        font-size: 28px;
+    }
+h3, p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+    .hero p,
+    .eventCard p {
+        font-size: 16px;
+    }
+}
+
+.container {
+    padding: 20px;
+}
+td {
+width: 60px;
+}
+th {
+width: 60px;
+}

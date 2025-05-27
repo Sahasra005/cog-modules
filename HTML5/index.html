@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hyderabad Community Event Portal</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e3f2fd, #ffffff);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    nav {
+      background-color: #1565c0;
+      padding: 15px;
+      text-align: center;
+    }
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+    nav a {
+      color: white;
+      margin: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff3b3b;
+    }
+
+    #welcomeBanner {
+      background-color: #bbdefb;
+      padding: 25px;
+      text-align: center;
+      font-size: 22px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .highlight {
+      background-color: #ff7c3b;
+      font-weight: bold;
+      padding: 3px 6px;
+      border-radius: 5px;
+    }
+
+    .event-img {
+      width: 200px;
+      border: 2px solid #555;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .event-img:hover {
+      transform: scale(1.05);
+    }
+
+    table {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    form {
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+    section {
+      padding: 20px;
+      text-align: center;
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      width: 90%;
+      margin: 5px 0;
+      border: 1px solid #999;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0d47a1;
+    }
+
+    output {
+      display: block;
+      font-weight: bold;
+      color: green;
+      margin-top: 10px;
+    }
+
+    video {
+      width: 100%;
+      max-width: 500px;
+      display: block;
+      margin: 10px auto;
+    }
+
+    footer {
+      background-color: #0d47a1;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <a href="#home">Home</a>
+  <a href="#events">Events</a>
+  <a href="#register">Register</a>
+  <a href="#video">Promo</a>
+  <a href="#map">Nearby</a>
+  <a href="help.html" target="_blank">Help</a>
+</nav>
+
+<!-- Main Content -->
+<main>
+  <!-- Welcome -->
+  <section id="home">
+    <div id="welcomeBanner">
+      Welcome to the <span class="highlight">Hyderabad Community Event Portal</span>!<br>
+      <span style="color:red; font-weight:bold;">Special Offer: Register now for free entry!</span>
+    </div>
+  </section>
+
+  <!-- Events Gallery -->
+  <section id="events">
+    <h2>Past Events Gallery</h2>
+    <table>
+      <caption>Photos from Music Fest, Cleanup Drive, and Food Fest</caption>
+      <tr>
+        <td><img class="event-img" src="https://theindianmusicdiaries.com/wp-content/smush-webp/2024/12/Supersonic.jpg.webp" alt="Music Fest" title="Music Fest" ondblclick="enlarge(this)"></td>
+        <td><img class="event-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_GCFCOKBAjrDPKTjGLlsS1V22AB7cb8gOZA&s" alt="Cleanup Drive" title="Cleanup Drive" ondblclick="enlarge(this)"></td>
+        <td><img class="event-img" src="https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/05/Popular-Food-Festival-In-India.jpg?fit=1024%2C683&ssl=1" alt="Food Fest" title="Food Fest" ondblclick="enlarge(this)"></td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Registration -->
+<section id="register">
+  <h2>Register for Upcoming Events</h2>
+  <div class="form-wrapper">
+    <form onsubmit="showConfirmation(event)">
+      <label>Name: <input type="text" name="name" placeholder="Your name" required autofocus></label>
+      <label>Email: <input type="email" name="email" placeholder="you@example.com" required></label>
+      <label>Date: <input type="date" name="eventDate" required></label>
+      <label>Event Type:
+        <select id="eventType" name="eventType" onchange="savePreference()" required>
+          <option value="">Choose an event</option>
+          <option value="music">Music Fest</option>
+          <option value="cleanup">Cleanup Drive</option>
+          <option value="food">Food Fest</option>
+        </select>
+      </label>
+      <label>Message: <textarea id="feedback" rows="4" cols="30" placeholder="Your message" onkeyup="countCharacters()"></textarea></label>
+      <label>Phone Number: <input type="text" id="phone" placeholder="10-digit number" onblur="validatePhone()"></label>
+      <output id="confirmationMessage"></output>
+      <br>
+      <button type="submit">Submit</button>
+      <button type="button" onclick="clearPreferences()">Clear Preferences</button>
+    </form>
+  </div>
+</section>
+
+
+  <!-- Promo Video -->
+  <section id="video">
+    <h2>Event Promo Video</h2>
+    <video controls oncanplay="videoReadyMessage()">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p id="videoStatus"></p>
+  </section>
+
+  <!-- Geolocation -->
+  <section id="map">
+    <h2>Find Nearby Events</h2>
+    <button onclick="findNearby()">Find Nearby Events</button>
+    <p id="locationResult"></p>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <p>Created by Kalluri Sahasra | Email: <a href="mailto:kallurisahasra005@gmail.com" style="color:white;">kallurisahasra005@gmail.com</a></p>
+</footer>
+
+<!-- Script -->
+<script>
+  function showConfirmation(event) {
+    event.preventDefault();
+    document.getElementById("confirmationMessage").innerText = "✅ Thank you for registering!";
+  }
+
+  function countCharacters() {
+    const length = document.getElementById("feedback").value.length;
+    console.log("Characters typed: " + length);
+  }
+
+  function validatePhone() {
+    const phone = document.getElementById("phone").value;
+    if (!/^[0-9]{10}$/.test(phone)) {
+      alert("❌ Please enter a valid 10-digit phone number.");
+    }
+  }
+
+  function savePreference() {
+    const selected = document.getElementById("eventType").value;
+    localStorage.setItem("preferredEvent", selected);
+  }
+
+  function clearPreferences() {
+    localStorage.clear();
+    sessionStorage.clear();
+    alert("✅ Preferences cleared!");
+  }
+
+  window.onload = function () {
+    const saved = localStorage.getItem("preferredEvent");
+    if (saved) {
+      document.getElementById("eventType").value = saved;
+    }
+  }
+
+  function videoReadyMessage() {
+    document.getElementById("videoStatus").innerText = "🎥 Video is ready to play!";
+  }
+
+  function findNearby() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          document.getElementById("locationResult").innerText =
+            "📍 Latitude: " + pos.coords.latitude + ", Longitude: " + pos.coords.longitude;
+        },
+        (err) => alert("❌ Location Error: " + err.message),
+        { enableHighAccuracy: true, timeout: 10000 }
+      );
+    } else {
+      alert("❌ Geolocation not supported.");
+    }
+  }
+
+  function enlarge(img) {
+    img.style.transform = "scale(1.5)";
+    setTimeout(() => {
+      img.style.transform = "scale(1)";
+    }, 1500);
+  }
+
+  window.onbeforeunload = function () {
+    return "You have unsaved changes. Are you sure you want to leave?";
+  };
+</script>
+
+</body>
+</html>

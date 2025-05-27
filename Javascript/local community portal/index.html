@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Local Community Event Portal - Kalluri Sahasra</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body onload="pageLoaded()">
+  <!-- Header with your details -->
+  <header>
+    <h1>Welcome to Kalluri Sahasra's Local Community Event Portal</h1>
+    <p class="subtitle">Connecting people through local events in Hyderabad</p>
+    <div class="filters">
+      <label for="categoryFilter">Filter by Category:</label>
+      <select id="categoryFilter">
+        <option value="All">All</option>
+        <option value="Music">Music</option>
+        <option value="Food">Food</option>
+        <option value="Health">Health</option>
+        <option value="Social">Social</option>
+      </select>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section id="eventContainer" class="event-container"></section>
+
+    <section class="registration-form">
+      <h2>Register for an Event</h2>
+      <form id="registerForm">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <select name="event" id="eventSelect" required>
+          <option value="">Select Event</option>
+        </select>
+        <button type="submit">Register</button>
+      </form>
+      <p id="formMessage"></p>
+    </section>
+  </main>
+
+  <!-- Footer with your contact -->
+  <footer style="text-align: center; padding: 1rem; background-color: #333; color: white;">
+    <p>Created by Kalluri Sahasra | 📍 Hyderabad | 📧 <a href="mailto:kallurisahasra005@gmail.com" style="color: #0af;">Email Me</a></p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
